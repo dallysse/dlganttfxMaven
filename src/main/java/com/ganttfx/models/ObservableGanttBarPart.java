@@ -21,32 +21,24 @@ public class ObservableGanttBarPart implements ObservableValue<GanttBarPart> {
 	}
 
 	@Override
+	public void addListener(InvalidationListener listener) {
+	}
+
+	@Override
+	public void removeListener(InvalidationListener listener) {
+	}
+
+	@Override
+	public void addListener(ChangeListener<? super GanttBarPart> listener) {
+	}
+
+	@Override
 	public GanttBarPart getValue() {
 		return piece;
 	}
 
-    @Override
-    public void addListener(InvalidationListener arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addListener'");
-    }
-
-    @Override
-    public void removeListener(InvalidationListener arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeListener'");
-    }
-
-    @Override
-    public void addListener(ChangeListener<? super GanttBarPart> arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addListener'");
-    }
-
-    @Override
-    public void removeListener(ChangeListener<? super GanttBarPart> arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeListener'");
-    }
+	@Override
+	public void removeListener(ChangeListener<? super GanttBarPart> listener) {
+	}
 
 }

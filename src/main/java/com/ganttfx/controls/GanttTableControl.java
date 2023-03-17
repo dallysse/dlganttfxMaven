@@ -130,8 +130,7 @@ public abstract class GanttTableControl<T extends Activity> extends TableView<T>
         TableColumn<T, String> descriptionCol = new TableColumn<T, String>(description);
         descriptionCol.setCellValueFactory(new PropertyValueFactory<T, String>("description"));
 
-        this.getColumns().addAll(numberCol, nameCol, startCol, endCol, durationCol, stateCol, progressCol,
-                descriptionCol);
+        this.getColumns().addAll(numberCol, nameCol, startCol, endCol, durationCol, stateCol, progressCol, descriptionCol);
 
         // add specific columns
         addSpecificColumns();

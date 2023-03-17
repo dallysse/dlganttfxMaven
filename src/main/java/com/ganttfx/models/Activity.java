@@ -86,7 +86,7 @@ public class Activity {
 		return this.nameProperty().get();
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.nameProperty().set(name);
 	}
 
@@ -110,7 +110,7 @@ public class Activity {
 		return this.endDateProperty().get();
 	}
 
-	public void setEndDate( LocalDate endDate) {
+	public void setEndDate(final LocalDate endDate) {
 		this.endDateProperty().set(endDate);
 	}
 
@@ -161,5 +161,6 @@ public class Activity {
 	public static void check(boolean bedigung, String msg) {
 		if (!bedigung)
 			throw new IllegalArgumentException(msg);
-	} 
+	}
+
 }

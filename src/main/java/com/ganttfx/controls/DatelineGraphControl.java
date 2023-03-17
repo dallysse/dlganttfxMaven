@@ -14,10 +14,12 @@ import com.ganttfx.models.ObservableGanttBarPart;
 import com.ganttfx.models.PartType;
 import com.ganttfx.utils.DateUtils;
 
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableRow;
@@ -25,7 +27,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-
 
 public abstract class DatelineGraphControl<T extends Activity> extends TableView<T> {
 
@@ -82,7 +83,6 @@ public abstract class DatelineGraphControl<T extends Activity> extends TableView
      * @return
      */
     public TableView<T> setListOfDay(LocalDate firstDay, LocalDate lastDay) {
-
         WeekFields weekFields = WeekFields.of(Locale.getDefault());
         int weekNumber = firstDay.get(weekFields.weekOfWeekBasedYear());
 
@@ -117,7 +117,7 @@ public abstract class DatelineGraphControl<T extends Activity> extends TableView
             if (DateUtils.isWeekend(date)) {
 
                 // weekSubcolumn.setStyle(String.format(styleFormat, weekendColor));
-                weekSubcolumn.getStyleClass().add("weekendColor");
+                weekSubcolumn.getStyleClass().add("WeekendColor");
             }
 
             if (date.equals(today)) {
