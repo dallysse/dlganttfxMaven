@@ -1,5 +1,6 @@
 package com.ganttfx.controls;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -83,24 +84,17 @@ public class GanttChartHbox<T extends Activity> extends HBox {
         lastest.getStyleClass().add("button");
 
         // go to lastest
-        scrollToGivenDate(lastest, lastDay, tableView, true);
+         scrollToGivenDate(lastest, lastDay, tableView, true);
 
-        /*
-         * Image imgNow = new
-         * Image(getClass().getResourceAsStream("resources/clock.png"));
-         * ImageView iconN = new ImageView(imgNow);
-         * now.setGraphic(iconN);
-         * 
-         * Image ImgEarliest = new
-         * Image(getClass().getResourceAsStream("resources/back.png"));
-         * ImageView iconE = new ImageView(ImgEarliest);
-         * earliest.setGraphic(iconE);
-         * 
-         * Image Imglast = new
-         * Image(getClass().getResourceAsStream("resources/next.png"));
-         * ImageView iconL = new ImageView(Imglast);
-         * lastest.setGraphic(iconL);
-         */
+          ImageView iconN = new ImageView(getClass().getResource("/clock.png").toExternalForm());
+          now.setGraphic(iconN);
+          
+          ImageView iconE = new ImageView(getClass().getResource("/back.png").toExternalForm());
+          earliest.setGraphic(iconE);
+          
+          ImageView iconL = new ImageView(getClass().getResource("/next.png").toExternalForm());
+          lastest.setGraphic(iconL);
+         
 
         new HBox(hboxSize);
 

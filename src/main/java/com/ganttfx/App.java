@@ -115,7 +115,7 @@ public class App extends Application {
 
         try {
             Scene scene = new Scene(getGanttChartWithMenu());
-            scene.getStylesheets().add(getClass().getResource("css/gantt.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("resources/gantt.css").toExternalForm());
             primaryStage.setTitle("Ganttchart");
             primaryStage.setScene(scene);
             primaryStage.show();
