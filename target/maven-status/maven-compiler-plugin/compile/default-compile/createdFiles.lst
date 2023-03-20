@@ -10,7 +10,6 @@ com/ganttfx/controls/GanttTaskControl$1.class
 com/ganttfx/controls/GanttChartHbox.class
 com/ganttfx/controls/GanttTableControl$2.class
 com/ganttfx/controls/GanttTaskControl.class
-com/ganttfx/controls/GanttTableControl$3$1.class
 com/ganttfx/controls/GanttChartHbox$2.class
 com/ganttfx/controls/DatelineGraphControl$7.class
 com/ganttfx/controls/DatelineGraphControl.class
@@ -22,7 +21,6 @@ com/ganttfx/App.class
 com/ganttfx/models/GanttResource.class
 com/ganttfx/models/Activity.class
 com/ganttfx/controls/DatelineGraphControl$4.class
-com/ganttfx/controls/GanttTableControl$3.class
 com/ganttfx/controls/GanttChartHbox$1.class
 com/ganttfx/models/TaskPriority.class
 com/ganttfx/utils/DateUtils.class

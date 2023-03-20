@@ -28,7 +28,9 @@ public abstract class GanttTableControl<T extends Activity> extends TableView<T>
     protected String duration = "Duration";
     protected String state = "State";
     protected String progress = "Progress";
-    protected String description = "description";
+    protected String description = "Description";
+    protected String id = "";
+
 
     public GanttTableControl() {
 
@@ -53,34 +55,19 @@ public abstract class GanttTableControl<T extends Activity> extends TableView<T>
      * creating columns and the adding in table
      */
     private void createGanttTableView() {
-        TableColumn<T, T> numberCol = new TableColumn();
-        numberCol.setCellValueFactory(new Callback<CellDataFeatures<T, T>, ObservableValue<T>>() {
-
+        TableColumn<T, Integer> numberCol = new TableColumn<T, Integer>(id);
+        numberCol.setCellValueFactory(new PropertyValueFactory<T, Integer>("id" ));
+        numberCol.setCellFactory(column -> new TableCell<T, Integer>() {
             @Override
-            public ObservableValue<T> call(CellDataFeatures<T, T> p) {
-                return new ReadOnlyObjectWrapper(p.getValue());
+            protected void updateItem(Integer item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setText(String.valueOf(item+1));
+                }
             }
         });
-
-        numberCol.setCellFactory(new Callback<TableColumn<T, T>, TableCell<T, T>>() {
-            @Override
-            public TableCell<T, T> call(TableColumn<T, T> param) {
-                return new TableCell<T, T>() {
-                    @Override
-                    protected void updateItem(T item, boolean empty) {
-                        super.updateItem(item, empty);
-
-                        if (this.getTableRow() != null && item != null) {
-                            setText(this.getTableRow().getIndex() + 1 + "");
-                        } else {
-                            setText("");
-                        }
-                    }
-                };
-            }
-        });
-        numberCol.setSortable(false);
-
         TableColumn<T, String> nameCol = new TableColumn<T, String>(name);
         nameCol.setCellValueFactory(new PropertyValueFactory<T, String>("name"));
 
