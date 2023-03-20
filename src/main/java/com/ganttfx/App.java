@@ -30,10 +30,9 @@ public class App extends Application {
         ganttTaskControl = new GanttTaskControl();
         ganttTaskControl.setItems(ganttTasks);
         ganttTaskControl.generate();
-        // timelineGraphControl = new
-        // DatelineTaskGraphControl().generate(LocalDate.of(2023, 03,
-        // 01),LocalDate.of(2025, 02, 26));
-        timelineGraphControl = new DatelineTaskGraphControl().init(13, true);
+         timelineGraphControl = new
+        DatelineTaskGraphControl().generate(LocalDate.of(2023, 03,01),LocalDate.of(2025, 02, 26));
+        //timelineGraphControl = new DatelineTaskGraphControl().init(13, true);
         timelineGraphControl.setGanttPiece(ganttTasks);
         timelineGraphControl.scrollToColumnEvent(ganttTaskControl);
 
@@ -115,7 +114,7 @@ public class App extends Application {
 
         try {
             Scene scene = new Scene(getGanttChartWithMenu());
-            scene.getStylesheets().add(getClass().getResource("resources/gantt.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/css/gantt.css").toExternalForm());
             primaryStage.setTitle("Ganttchart");
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -123,6 +122,7 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
 
     public static void main(String[] args) {
         launch(args);
